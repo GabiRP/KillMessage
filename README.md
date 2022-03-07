@@ -2,7 +2,7 @@
 
 An Exiled 5 plugin that shows a message to players you kill.
 
-##Available Commands
+## Available Commands
 
 - kmsg set - Sets your kill message
 - kmsg delete - Deletes your kill message
