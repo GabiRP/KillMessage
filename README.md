@@ -2,7 +2,7 @@
 
 An Exiled 5 plugin that shows a message to players you kill.
 
-[![Github All Releases](https://img.shields.io/github/downloads/GabiRP/CoinTweaks/total?color=red&style=for-the-badge)]()
+[![Github All Releases](https://img.shields.io/github/downloads/GabiRP/KillMessage/total?color=red&style=for-the-badge)]()
 
 ## Available Commands
 
