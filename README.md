@@ -1,6 +1,6 @@
 # KillMessage
 
-An Exiled 5 plugin that shows a message to players you kill.
+An Exiled 4 plugin that shows a message to players you kill.
 
 ## Available Commands
 
