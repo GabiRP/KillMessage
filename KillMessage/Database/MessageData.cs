@@ -1,5 +1,4 @@
-﻿using KillMessage.Enums;
-using LiteDB;
+﻿using LiteDB;
 
 namespace KillMessage.Database
 {
@@ -9,6 +8,6 @@ namespace KillMessage.Database
         public string UserId { get; set; }
         public string Message { get; set; }
         public bool Disabled { get; set; }
-        public Color Color { get; set; }
+        public string Color { get; set; }
     }
 }

@@ -30,6 +30,7 @@
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -96,7 +97,6 @@
         <Compile Include="Database\Database.cs" />
         <Compile Include="Database\Extensions.cs" />
         <Compile Include="Database\MessageData.cs" />
-        <Compile Include="Enums\Color.cs" />
         <Compile Include="EventHandlers.cs" />
         <Compile Include="Plugin.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

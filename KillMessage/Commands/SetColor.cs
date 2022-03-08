@@ -4,12 +4,12 @@ using CommandSystem;
 using Exiled.API.Features;
 using Exiled.Permissions.Extensions;
 using KillMessage.Database;
-using KillMessage.Enums;
 
 namespace KillMessage.Commands
 {
     public class SetColor : ICommand
     {
+        
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             if (Plugin.Singleton.Config.UsePermissions && sender.CheckPermission("kmsg"))
@@ -19,10 +19,10 @@ namespace KillMessage.Commands
             }
             
             Player p = Player.Get(sender);
-            
-            if (!Enum.TryParse(arguments.ElementAt(0), out Color c))
+            string c = arguments.ElementAt(0);
+            if (!Plugin.Singleton.Config.AvailableColors.Contains(c.ToLower()))
             {
-                response = $"Could not find the color {arguments.ElementAt(0)}";
+                response = $"Could not find the color '{arguments.ElementAt(0)}'";
                 return false;
             }
             p.UpdateColor(c);

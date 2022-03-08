@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Exiled.API.Features;
-using KillMessage.Enums;
 using LiteDB;
 
 namespace KillMessage.Database
@@ -19,7 +18,7 @@ namespace KillMessage.Database
                         Message = message,
                         UserId = ply.RawUserId,
                         Disabled = false,
-                        Color = Color.yellow
+                        Color = "yellow"
                     });
                     return true;
                 }
@@ -44,7 +43,7 @@ namespace KillMessage.Database
                     {
                         Message = message,
                         UserId = ply.RawUserId,
-                        Color = Color.yellow,
+                        Color = "yellow",
                         Disabled = false,
                     });
                     return true;
@@ -75,7 +74,7 @@ namespace KillMessage.Database
                         Message = "",
                         UserId = ply.RawUserId,
                         Disabled = false,
-                        Color = Color.yellow
+                        Color = "yellow"
                     });
                     return true;
                 }
@@ -94,7 +93,7 @@ namespace KillMessage.Database
             }
         }
         
-        public static bool UpdateColor(this Player ply, Color color)
+        public static bool UpdateColor(this Player ply, string color)
         {
             try
             {
@@ -105,7 +104,7 @@ namespace KillMessage.Database
                         Message = "",
                         UserId = ply.RawUserId,
                         Disabled = false,
-                        Color = color
+                        Color = "yellow"
                     });
                     return true;
                 }
@@ -113,7 +112,7 @@ namespace KillMessage.Database
                 var m = Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId);
                 if (m != null)
                 {
-                    m.Color = color;
+                    m.Color = "yellow";
                     Database.LiteDatabase.GetCollection<MessageData>().Update(m);
                 }
 
