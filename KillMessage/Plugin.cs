@@ -17,7 +17,8 @@ namespace KillMessage
             Singleton = this;
             EventHandlers = new EventHandlers();
             Database.Database.Open();
-            Exiled.Events.Handlers.Player.Died += EventHandlers.Died;
+            Exiled.Events.Handlers.Player.Died += EventHandlers.OnDied;
+            Exiled.Events.Handlers.Player.Verified += EventHandlers.OnVerified;
             base.OnEnabled();
         }
 
@@ -25,7 +26,8 @@ namespace KillMessage
         {
             Singleton = null;
             Database.Database.Close();
-            Exiled.Events.Handlers.Player.Died -= EventHandlers.Died;
+            Exiled.Events.Handlers.Player.Died -= EventHandlers.OnDied;
+            Exiled.Events.Handlers.Player.Verified -= EventHandlers.OnVerified;
             base.OnDisabled();
         }
     }

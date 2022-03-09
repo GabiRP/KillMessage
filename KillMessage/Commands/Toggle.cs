@@ -5,7 +5,7 @@ using KillMessage.Database;
 
 namespace KillMessage.Commands
 {
-    public class Disable : ICommand
+    public class Toggle : ICommand
     {
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {

@@ -17,7 +17,7 @@ namespace KillMessage.Commands
         {
             RegisterCommand(new Set());
             RegisterCommand(new Delete());
-            RegisterCommand(new Disable());
+            RegisterCommand(new Toggle());
             RegisterCommand(new SetColor());
         }
         

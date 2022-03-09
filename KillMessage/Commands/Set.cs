@@ -17,8 +17,9 @@ namespace KillMessage.Commands
                 response = "No permission.";
                 return false;
             }
-
+            
             Player p = Player.Get(sender);
+            
             string msg = "";
             StringBuilder stringBuilder = StringBuilderPool.Shared.Rent();
             foreach (string argument in arguments)
@@ -26,9 +27,9 @@ namespace KillMessage.Commands
                 stringBuilder.Append(argument);
                 stringBuilder.Append(" ");
             }
-
             msg = stringBuilder.ToString();
             StringBuilderPool.Shared.Return(stringBuilder);
+            
             p.UpdateMessage(msg);
             response = "Kill message updated";
             return true;

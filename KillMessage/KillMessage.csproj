@@ -89,7 +89,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Commands\Delete.cs" />
-        <Compile Include="Commands\Disable.cs" />
+        <Compile Include="Commands\Toggle.cs" />
         <Compile Include="Commands\Parent.cs" />
         <Compile Include="Commands\Set.cs" />
         <Compile Include="Commands\SetColor.cs" />

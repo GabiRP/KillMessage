@@ -14,6 +14,9 @@ namespace KillMessage
         [Description("Whether or not use permissions to be able to use the command (permission: kmsg)")]
         public bool UsePermissions { get; set; } = false;
 
+        [Description("Whether or not to send a message to a player that joins to tell them about the plugin")]
+        public bool SendConsoleMessage { get; set; } = true;
+
         [Description("List of available colors. MAKE SURE TO WRITE THEM IN LOWER CASE AND USE SCPSL WIKI COLORS")]
         public string[] AvailableColors { get; set; } = new[]
         {
