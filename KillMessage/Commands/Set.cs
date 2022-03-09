@@ -14,7 +14,7 @@ namespace KillMessage.Commands
         {
             if (Plugin.Singleton.Config.UsePermissions && sender.CheckPermission("kmsg"))
             {
-                response = "No permission.";
+                response = Plugin.Singleton.Translation.NoPerms;
                 return false;
             }
             
@@ -29,13 +29,18 @@ namespace KillMessage.Commands
             }
             msg = stringBuilder.ToString();
             StringBuilderPool.Shared.Return(stringBuilder);
+            if (string.IsNullOrEmpty(msg))
+            {
+                response = Plugin.Singleton.Translation.EmptyMessage;
+                return false;
+            }
             if (msg.Length > Plugin.Singleton.Config.CharLimit)
             {
-                response = $"You can only enter up to {Plugin.Singleton.Config.CharLimit} characters";
+                response = Plugin.Singleton.Translation.MaxChars.Replace("$limit", Plugin.Singleton.Config.CharLimit.ToString());
                 return false;
             }
             p.UpdateMessage(msg);
-            response = "Kill message updated";
+            response = Plugin.Singleton.Translation.SetCmd;
             return true;
         }
 

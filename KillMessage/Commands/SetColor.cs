@@ -14,20 +14,30 @@ namespace KillMessage.Commands
         {
             if (Plugin.Singleton.Config.UsePermissions && sender.CheckPermission("kmsg"))
             {
-                response = "No permission.";
+                response = Plugin.Singleton.Translation.NoPerms;
                 return false;
             }
             
             Player p = Player.Get(sender);
+            if (arguments.Count < 1)
+            {
+                response = Plugin.Singleton.Translation.ColorEmpty;
+                return false;
+            }
             string c = arguments.ElementAt(0);
+            if (string.IsNullOrEmpty(c))
+            {
+                response = Plugin.Singleton.Translation.ColorEmpty;
+                return false;
+            }
             if (!Plugin.Singleton.Config.AvailableColors.Contains(c.ToLower()))
             {
-                response = $"Could not find the color '{arguments.ElementAt(0)}'";
+                response = Plugin.Singleton.Translation.ColorNotFound.Replace("$color", arguments.ElementAt(0));
                 return false;
             }
             p.UpdateColor(c);
 
-            response = "Color updated";
+            response = Plugin.Singleton.Translation.ColorCmd;
             return true;
         }
 

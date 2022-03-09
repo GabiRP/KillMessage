@@ -14,13 +14,12 @@ namespace KillMessage.Commands
         {
             if (Plugin.Singleton.Config.UsePermissions && sender.CheckPermission("kmsg"))
             {
-                response = "No permission.";
+                response = Plugin.Singleton.Translation.NoPerms;
                 return false;
             }
             
-            string msg = "";
-            Player.Get(sender).UpdateMessage(msg);
-            response = "Kill message deleted";
+            Player.Get(sender).UpdateMessage();
+            response = Plugin.Singleton.Translation.DeleteCmd;
             return true;
         }
 

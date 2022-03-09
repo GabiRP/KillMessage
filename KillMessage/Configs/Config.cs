@@ -3,7 +3,7 @@ using System.IO;
 using Exiled.API.Features;
 using Exiled.API.Interfaces;
 
-namespace KillMessage
+namespace KillMessage.Configs
 {
     public class Config : IConfig
     {

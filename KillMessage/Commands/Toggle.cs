@@ -10,15 +10,10 @@ namespace KillMessage.Commands
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             Player p = Player.Get(sender);
-            string msg = "";
+            
             p.UpdateDisabled();
-            if (p.GetDisabled())
-            {
-                response = "Kill messages are now hidden";
-                return true;
-            }
 
-            response = "Kill messages are no longer hidden";
+            response = p.GetDisabled() ? Plugin.Singleton.Translation.MessagesHidden : Plugin.Singleton.Translation.MessagesNotHidden;
             return true;
         }
 

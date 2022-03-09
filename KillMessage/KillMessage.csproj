@@ -93,7 +93,8 @@
         <Compile Include="Commands\Parent.cs" />
         <Compile Include="Commands\Set.cs" />
         <Compile Include="Commands\SetColor.cs" />
-        <Compile Include="Config.cs" />
+        <Compile Include="Configs\Config.cs" />
+        <Compile Include="Configs\Translations.cs" />
         <Compile Include="Database\Database.cs" />
         <Compile Include="Database\Extensions.cs" />
         <Compile Include="Database\MessageData.cs" />

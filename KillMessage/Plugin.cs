@@ -1,9 +1,10 @@
 ﻿using System;
 using Exiled.API.Features;
+using KillMessage.Configs;
 
 namespace KillMessage
 {
-    public class Plugin : Plugin<Config>
+    public class Plugin : Plugin<Config, Translations>
     {
         public override string Name => "KillMessage";
         public override string Author => "GabiRP";

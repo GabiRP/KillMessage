@@ -25,14 +25,11 @@ namespace KillMessage.Commands
         {
             if (Plugin.Singleton.Config.UsePermissions && !sender.CheckPermission("kmsg"))
             {
-                response = "No permission.";
+                response = Plugin.Singleton.Translation.NoPerms;
                 return false;
             }
-            response = $"Usage:\n" +
-                       $"· kmsg set - Sets your kill message\n" +
-                       $"· kmsg delete - Deletes your kill message\n" +
-                       $"· kmsg toggle - Toggles whether or not you can see kill messages\n" +
-                       $"· kmsg color - Sets your kill message color";
+
+            response = Plugin.Singleton.Translation.HelpMessage;
             return true;
         }
 
