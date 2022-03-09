@@ -10,7 +10,6 @@ namespace KillMessage.Commands
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             Player p = Player.Get(sender);
-            string msg = "";
             p.UpdateDisabled();
             if (p.GetDisabled())
             {
