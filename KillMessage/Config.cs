@@ -17,6 +17,15 @@ namespace KillMessage
         [Description("Whether or not to send a message to a player that joins to tell them about the plugin")]
         public bool SendConsoleMessage { get; set; } = true;
 
+        [Description("Kill message's character limit")]
+        public int CharLimit { get; set; } = 32;
+
+        [Description("Message size")]
+        public int MessageSize { get; set; } = 30;
+
+        [Description("Message duration")] 
+        public ushort MessageDuration { get; set; } = 3;
+        
         [Description("List of available colors. MAKE SURE TO WRITE THEM IN LOWER CASE AND USE SCPSL WIKI COLORS")]
         public string[] AvailableColors { get; set; } = new[]
         {

@@ -9,7 +9,7 @@ namespace KillMessage
         {
             if(ev.Target.GetDisabled() || ev.Killer == null || ev.Target == null || string.IsNullOrEmpty(ev.Killer.GetMessage())) return;
             ev.Target.ShowHint(
-                $"<color={ev.Killer.GetColor()}>{ev.Killer.GetMessage()} - <b>{ev.Killer.Nickname}</b></color>");
+                $"<size={Plugin.Singleton.Config.MessageSize}><color={ev.Killer.GetColor()}>{ev.Killer.GetMessage()} - <b>{ev.Killer.Nickname}</b></color></size>", Plugin.Singleton.Config.MessageDuration);
         }
 
         internal void OnVerified(VerifiedEventArgs ev)

@@ -29,7 +29,11 @@ namespace KillMessage.Commands
             }
             msg = stringBuilder.ToString();
             StringBuilderPool.Shared.Return(stringBuilder);
-            
+            if (msg.Length > Plugin.Singleton.Config.CharLimit)
+            {
+                response = $"You can only enter up to {Plugin.Singleton.Config.CharLimit} characters";
+                return false;
+            }
             p.UpdateMessage(msg);
             response = "Kill message updated";
             return true;
