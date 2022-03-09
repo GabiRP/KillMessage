@@ -84,7 +84,7 @@
         <Reference Include="System.Runtime" />
         <Reference Include="System.Xml" />
         <Reference Include="UnityEngine.CoreModule">
-          <HintPath>F:\ExiledReferences\UnityEngine.CoreModule.dll</HintPath>
+          <HintPath>$(EXILED_REFERENCES)\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
