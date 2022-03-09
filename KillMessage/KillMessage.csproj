@@ -34,13 +34,13 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp">
-          <HintPath>F:\ExiledReferences\Assembly-CSharp-Publicized.dll</HintPath>
+          <HintPath>$(EXILED_REFERENCES)\Assembly-CSharp-Publicized.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp-firstpass">
-          <HintPath>F:\ExiledReferences\Assembly-CSharp-firstpass.dll</HintPath>
+          <HintPath>$(EXILED_REFERENCES)\Assembly-CSharp-firstpass.dll</HintPath>
         </Reference>
         <Reference Include="CommandSystem.Core">
-          <HintPath>F:\ExiledReferences\CommandSystem.Core.dll</HintPath>
+          <HintPath>$(EXILED_REFERENCES)\CommandSystem.Core.dll</HintPath>
         </Reference>
         <Reference Include="Exiled.API, Version=4.2.5.0, Culture=neutral, processorArchitecture=Amd64">
           <HintPath>..\packages\EXILED.4.2.5\lib\net472\Exiled.API.dll</HintPath>
@@ -73,10 +73,10 @@
           <HintPath>..\packages\LiteDB.5.0.9\lib\net45\LiteDB.dll</HintPath>
         </Reference>
         <Reference Include="Mirror">
-          <HintPath>F:\ExiledReferences\Mirror.dll</HintPath>
+          <HintPath>$(EXILED_REFERENCES)\Mirror.dll</HintPath>
         </Reference>
         <Reference Include="NorthwoodLib">
-          <HintPath>F:\ExiledReferences\NorthwoodLib.dll</HintPath>
+          <HintPath>$(EXILED_REFERENCES)\NorthwoodLib.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
@@ -84,7 +84,7 @@
         <Reference Include="System.Runtime" />
         <Reference Include="System.Xml" />
         <Reference Include="UnityEngine.CoreModule">
-          <HintPath>F:\ExiledReferences\UnityEngine.CoreModule.dll</HintPath>
+          <HintPath>$(EXILED_REFERENCES)\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
