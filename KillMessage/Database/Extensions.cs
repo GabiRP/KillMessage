@@ -7,19 +7,13 @@ namespace KillMessage.Database
 {
     public static class Extensions
     {
-        public static bool AddUser(this Player ply, string message = "")
+        public static bool AddUser(this Player ply, MessageData msg = null)
         {
             try
             {
                 if (!Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId))
                 {
-                    Database.LiteDatabase.GetCollection<MessageData>().Insert(new MessageData()
-                    {
-                        Message = message,
-                        UserId = ply.RawUserId,
-                        Disabled = false,
-                        Color = "yellow"
-                    });
+                    Database.LiteDatabase.GetCollection<MessageData>().Insert(msg);
                     return true;
                 }
 
@@ -39,7 +33,7 @@ namespace KillMessage.Database
             {
                 if (!Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId))
                 {
-                    Database.LiteDatabase.GetCollection<MessageData>().Insert(new MessageData
+                    AddUser(ply, new MessageData
                     {
                         Message = message,
                         UserId = ply.RawUserId,
@@ -69,12 +63,12 @@ namespace KillMessage.Database
             {
                 if (!Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId))
                 {
-                    Database.LiteDatabase.GetCollection<MessageData>().Insert(new MessageData()
+                    AddUser(ply, new MessageData
                     {
                         Message = "",
                         UserId = ply.RawUserId,
+                        Color = "yellow",
                         Disabled = false,
-                        Color = "yellow"
                     });
                     return true;
                 }
@@ -99,12 +93,12 @@ namespace KillMessage.Database
             {
                 if (!Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId))
                 {
-                    Database.LiteDatabase.GetCollection<MessageData>().Insert(new MessageData
+                    AddUser(ply, new MessageData
                     {
                         Message = "",
                         UserId = ply.RawUserId,
+                        Color = color,
                         Disabled = false,
-                        Color = "yellow"
                     });
                     return true;
                 }
