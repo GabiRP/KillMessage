@@ -11,7 +11,7 @@ namespace KillMessage.Configs
         [Description("The folder where the database file will be stored in")]
         public string DatabaseFolder { get; set; } = Path.Combine(Paths.Plugins, "KillMessage");
 
-        [Description("Whether or not use permissions to be able to use the command (permission: kmsg)")]
+        [Description("Whether or not use permissions to be able to use commands (permission: kmsg)")]
         public bool UsePermissions { get; set; } = false;
 
         [Description("Whether or not to send a message to a player that joins to tell them about the plugin")]
@@ -20,10 +20,10 @@ namespace KillMessage.Configs
         [Description("Kill message's character limit")]
         public int CharLimit { get; set; } = 32;
 
-        [Description("Message size")]
+        [Description("Size of the message that's shown to the killed player")]
         public int MessageSize { get; set; } = 30;
 
-        [Description("Message duration")] 
+        [Description("Duration of the message that's shown to the killed player")] 
         public ushort MessageDuration { get; set; } = 3;
         
         [Description("List of available colors. MAKE SURE TO WRITE THEM IN LOWER CASE AND USE SCPSL WIKI COLORS")]
