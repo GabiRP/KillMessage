@@ -9,6 +9,9 @@ namespace KillMessage.Configs
         public string ConsoleMessage { get; set; } = "\n<b>KillMessage</b>\n" +
                                                      "A plugin that shows a message to players you kill\n$helpmsg";
 
+        [Description(
+            "Message shown to killer player. $message will be replaced with the message. $author will be replaced with the killer")]
+        public string Message { get; set; } = "$message - <b>$author</b>";
         [Description("Help message")]
         public string HelpMessage { get; set; } = "\nUsage:\n" +
                                                   "· kmsg set - Sets your kill message\n" +
