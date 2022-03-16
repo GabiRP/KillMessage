@@ -1,6 +1,6 @@
 # KillMessage
 
-An Exiled 5 plugin that shows a message to players you kill.
+An Exiled plugin that shows a message to players you kill.
 
 [![Github All Releases](https://img.shields.io/github/downloads/GabiRP/KillMessage/total?color=blue&style=for-the-badge)]()
 
