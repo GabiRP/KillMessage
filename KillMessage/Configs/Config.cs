@@ -26,7 +26,7 @@ namespace KillMessage.Configs
         [Description("Duration of the message that's shown to the killed player")] 
         public ushort MessageDuration { get; set; } = 3;
         
-        [Description("List of available colors. MAKE SURE TO WRITE THEM IN LOWER CASE AND USE SCPSL WIKI COLORS")]
+        [Description("List of available colors. MAKE SURE TO USE SCPSL WIKI COLORS")]
         public string[] AvailableColors { get; set; } = {
             "pink", "red", "brown", "silver", "light_green", "crimson", "cyan", "aqua", "deep_pink", "tomato", "yellow", "magenta", "blue_green",
             "orange"
