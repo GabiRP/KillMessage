@@ -7,7 +7,7 @@ namespace KillMessage.Database
 {
     public static class Extensions
     {
-        public static bool AddUser(this Player ply, MessageData msg = null)
+        public static bool AddPlayer(this Player ply, MessageData msg = null)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace KillMessage.Database
             {
                 if (!Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId))
                 {
-                    AddUser(ply, new MessageData
+                    AddPlayer(ply, new MessageData
                     {
                         Message = message,
                         UserId = ply.RawUserId,
@@ -63,7 +63,7 @@ namespace KillMessage.Database
             {
                 if (!Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId))
                 {
-                    AddUser(ply, new MessageData
+                    AddPlayer(ply, new MessageData
                     {
                         Message = "",
                         UserId = ply.RawUserId,
@@ -93,7 +93,7 @@ namespace KillMessage.Database
             {
                 if (!Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId))
                 {
-                    AddUser(ply, new MessageData
+                    AddPlayer(ply, new MessageData
                     {
                         Message = "",
                         UserId = ply.RawUserId,
