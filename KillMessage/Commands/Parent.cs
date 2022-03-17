@@ -3,7 +3,9 @@ using System.Runtime.InteropServices;
 using CommandSystem;
 using CommandSystem.Commands.RemoteAdmin.PermissionsManagement.Group;
 using CustomPlayerEffects;
+using Exiled.API.Features;
 using Exiled.Permissions.Extensions;
+using KillMessage.Database;
 using Mirror;
 
 namespace KillMessage.Commands
@@ -29,7 +31,8 @@ namespace KillMessage.Commands
                 return false;
             }
 
-            response = Plugin.Singleton.Translation.HelpMessage;
+            string current = Player.Get(sender).GetMessage();
+            response = Plugin.Singleton.Translation.HelpMessage.Replace($"$current", string.IsNullOrEmpty(current) ? Plugin.Singleton.Translation.MessageNotSet : current);
             return true;
         }
 

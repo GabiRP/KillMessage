@@ -17,7 +17,11 @@ namespace KillMessage.Configs
                                                   "· kmsg set - Sets your kill message\n" +
                                                   "· kmsg delete - Deletes your kill message\n" +
                                                   "· kmsg toggle - Toggles whether or not you can see kill messages\n" +
-                                                  "· kmsg color - Sets your kill message color";
+                                                  "· kmsg color - Sets your kill message color\n" +
+                                                  "· Your current message: $current";
+
+        [Description("Message not set translation (shown on help message)")]
+        public string MessageNotSet { get; set; } = "NOT SET";
         
         [Description("Message sent to players without permissions to use the command")]
         public string NoPerms { get; set; } = "No permission.";
