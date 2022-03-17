@@ -31,8 +31,10 @@ namespace KillMessage.Commands
                 return false;
             }
 
-            string current = Player.Get(sender).GetMessage();
-            response = Plugin.Singleton.Translation.HelpMessage.Replace($"$current", string.IsNullOrEmpty(current) ? Plugin.Singleton.Translation.MessageNotSet : current);
+            Player p = Player.Get(sender);
+            string current = p.GetMessage();
+            string color = p.GetColor();
+            response = Plugin.Singleton.Translation.HelpMessage.Replace($"$current", string.IsNullOrEmpty(current) ? Plugin.Singleton.Translation.MessageNotSet : current).Replace("$color", color);
             return true;
         }
 

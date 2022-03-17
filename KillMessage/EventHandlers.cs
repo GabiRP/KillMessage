@@ -17,8 +17,12 @@ namespace KillMessage
         internal void OnVerified(VerifiedEventArgs ev)
         {
             if (Plugin.Singleton.Config.SendConsoleMessage)
-                ev.Player.SendConsoleMessage(Plugin.Singleton.Translation.ConsoleMessage.Replace("$helpmsg", Plugin.Singleton.Translation.HelpMessage),
+            {
+                string current = ev.Player.GetMessage();
+                string color = ev.Player.GetColor();
+                ev.Player.SendConsoleMessage(Plugin.Singleton.Translation.ConsoleMessage.Replace("$helpmsg", Plugin.Singleton.Translation.HelpMessage).Replace("$current", string.IsNullOrEmpty(current) ? Plugin.Singleton.Translation.MessageNotSet : current).Replace("$color", color),
                     "default");
+            }
         }
     }
 }

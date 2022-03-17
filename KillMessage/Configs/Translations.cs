@@ -12,13 +12,13 @@ namespace KillMessage.Configs
         [Description(
             "Message shown to killer player. $message will be replaced with the message. $author will be replaced with the killer")]
         public string Message { get; set; } = "$message - <b>$author</b>";
-        [Description("Help message")]
+        [Description("Help message. $current will be replaced with the current message")]
         public string HelpMessage { get; set; } = "\nUsage:\n" +
                                                   "· kmsg set - Sets your kill message\n" +
                                                   "· kmsg delete - Deletes your kill message\n" +
                                                   "· kmsg toggle - Toggles whether or not you can see kill messages\n" +
                                                   "· kmsg color - Sets your kill message color\n" +
-                                                  "· Your current message: $current";
+                                                  "· Your current message and color: $current / $color";
 
         [Description("Message not set translation (shown on help message)")]
         public string MessageNotSet { get; set; } = "NOT SET";
