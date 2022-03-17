@@ -104,11 +104,9 @@ namespace KillMessage.Database
                 }
 
                 var m = Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId);
-                if (m != null)
-                {
-                    m.Color = "yellow";
-                    Database.LiteDatabase.GetCollection<MessageData>().Update(m);
-                }
+                m.Color = color;
+                Database.LiteDatabase.GetCollection<MessageData>().Update(m);
+                
 
                 return true;
             }
@@ -130,7 +128,6 @@ namespace KillMessage.Database
         }
 
         public static string GetColor(this Player ply)
-            => Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId).Color
-                .ToString();
+            => Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId).Color;
     }
 }
