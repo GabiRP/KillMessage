@@ -20,6 +20,9 @@ namespace KillMessage.Configs
         [Description("Kill message's character limit")]
         public int CharLimit { get; set; } = 32;
 
+        [Description("A list of blacklisted words")]
+        public string[] BlacklistedWords { get; set; } = {"your", "blacklisted", "words", "go", "here"};
+
         [Description("Size of the message that's shown to the killed player")]
         public int MessageSize { get; set; } = 30;
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using CommandSystem;
 using Exiled.API.Features;
@@ -25,6 +26,11 @@ namespace KillMessage.Commands
             foreach (string argument in arguments)
             {
                 stringBuilder.Append(argument);
+                if (Plugin.Singleton.Config.BlacklistedWords.Contains(argument))
+                {
+                    response = "There are blacklisted words in your message";
+                    return false;
+                }
                 stringBuilder.Append(" ");
             }
             msg = stringBuilder.ToString();
@@ -39,6 +45,7 @@ namespace KillMessage.Commands
                 response = Plugin.Singleton.Translation.MaxChars.Replace("$limit", Plugin.Singleton.Config.CharLimit.ToString());
                 return false;
             }
+            
             p.UpdateMessage(msg);
             response = Plugin.Singleton.Translation.SetCmd;
             return true;
