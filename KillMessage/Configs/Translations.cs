@@ -39,6 +39,9 @@ namespace KillMessage.Configs
         [Description("Set command response")] 
         public string SetCmd { get; set; } = "Kill message set";
 
+        [Description("Message shown when you try to set your message with blacklisted words")]
+        public string BlacklistedWords { get; set; } = "There are blacklisted words in your message";
+
         [Description("Color not found error. $color will be replaced with the color")]
         public string ColorNotFound { get; set; } = "Could not find color $color";
 
