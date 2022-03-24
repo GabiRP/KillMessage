@@ -7,27 +7,23 @@ namespace KillMessage.Database
 {
     public static class Extensions
     {
-        public static bool AddPlayer(this Player ply, MessageData msg = null)
+        private static void AddPlayer(this Player ply, MessageData msg = null)
         {
             try
             {
                 if (!Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId))
                 {
                     Database.LiteDatabase.GetCollection<MessageData>().Insert(msg);
-                    return true;
                 }
-
-                return false;
             }
             catch (Exception e)
             {
                 Log.Error(e);
-                return false;
             }
             
         }
 
-        public static bool UpdateMessage(this Player ply, string message = "")
+        public static void UpdateMessage(this Player ply, string message = "")
         {
             try
             {
@@ -40,7 +36,7 @@ namespace KillMessage.Database
                         Color = "yellow",
                         Disabled = false,
                     });
-                    return true;
+                    return;
                 }
 
                 var m = Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId);
@@ -48,16 +44,14 @@ namespace KillMessage.Database
                 
                 Database.LiteDatabase.GetCollection<MessageData>().Update(m);
 
-                return true;
             }
             catch (Exception e)
             {
                 Log.Error(e);
-                return false;
             }
         }
 
-        public static bool UpdateDisabled(this Player ply)
+        public static void UpdateDisabled(this Player ply)
         {
             try
             {
@@ -70,7 +64,7 @@ namespace KillMessage.Database
                         Color = "yellow",
                         Disabled = false,
                     });
-                    return true;
+                    return;
                 }
 
                 var m = Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId);
@@ -78,16 +72,14 @@ namespace KillMessage.Database
                 m.Disabled = !m.Disabled;
                 Database.LiteDatabase.GetCollection<MessageData>().Update(m);
 
-                return true;
             }
             catch (Exception e)
             {
                 Log.Error(e);
-                return false;
             }
         }
         
-        public static bool UpdateColor(this Player ply, string color)
+        public static void UpdateColor(this Player ply, string color)
         {
             try
             {
@@ -100,20 +92,17 @@ namespace KillMessage.Database
                         Color = color,
                         Disabled = false,
                     });
-                    return true;
+                    return;
                 }
 
                 var m = Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId);
                 m.Color = color;
                 Database.LiteDatabase.GetCollection<MessageData>().Update(m);
-                
 
-                return true;
             }
             catch (Exception e)
             {
                 Log.Error(e);
-                return false;
             }
         }
         
