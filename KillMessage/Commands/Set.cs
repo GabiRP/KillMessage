@@ -28,6 +28,7 @@ namespace KillMessage.Commands
                 stringBuilder.Append(argument);
                 if (Plugin.Singleton.Config.BlacklistedWords.Contains(argument))
                 {
+                    StringBuilderPool.Shared.Return(stringBuilder);
                     response = Plugin.Singleton.Translation.BlacklistedWords;
                     return false;
                 }
