@@ -12,9 +12,7 @@ namespace KillMessage.Database
             try
             {
                 if (!Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId))
-                {
                     Database.LiteDatabase.GetCollection<MessageData>().Insert(msg);
-                }
             }
             catch (Exception e)
             {
