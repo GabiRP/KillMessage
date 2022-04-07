@@ -2,6 +2,8 @@
 
 An Exiled plugin that shows a message to players you kill.
 
+IT SHOULD BE SAFE TO USE THE SAME DATABASE IN MULTIPLE SERVERS AT ONCE
+
 [![Github All Releases](https://img.shields.io/github/downloads/GabiRP/KillMessage/total?color=blue&style=for-the-badge)]()
 
 ## Available Commands
