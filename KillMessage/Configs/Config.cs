@@ -11,9 +11,6 @@ namespace KillMessage.Configs
         [Description("The folder where the database file will be stored in")]
         public string DatabaseFolder { get; set; } = Path.Combine(Paths.Plugins, "KillMessage");
 
-        [Description("Whether or not use permissions to be able to use commands (permission: kmsg)")]
-        public bool UsePermissions { get; set; } = false;
-
         [Description("Whether or not to send a message to a player that joins to tell them about the plugin")]
         public bool SendConsoleMessage { get; set; } = true;
 

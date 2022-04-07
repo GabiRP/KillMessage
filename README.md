@@ -23,3 +23,15 @@ An Exiled plugin that shows a message to players you kill.
 |     message_size     |    int   |                             Size of the message that's shown to the killed player                            |                                                         30                                                         |
 |   message_duration   |  ushort  |                           Duration of the message that's shown to the killed player                          |                                                          3                                                         |
 |   available_colors   | string[] |           List of available colors. MAKE SURE TO WRITE THEM IN LOWER CASE AND USE SCPSL WIKI COLORS          | pink, red, brown, silver, light_green, crimson, cyan, aqua, deep_pink, tomato, yellow, magenta, blue_green, orange |
+
+
+## Permissions
+
+| **Permission** |                    **Description**                   |
+|:--------------:|:----------------------------------------------------:|
+|     _kmsg_     | Permission to run all commands (except 'kmsg color') |
+|  _kmsg.color_  |            Permission to run 'kmsg color'            |
+
+### Give permission to all users
+
+- If you want to give all users a permission, there should be a group in your ``permissions.yml`` file called 'user' with ``default`` set to ``true``, simply add the permission you want to give to everyone there.

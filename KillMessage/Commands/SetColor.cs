@@ -12,7 +12,7 @@ namespace KillMessage.Commands
         
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
-            if (Plugin.Singleton.Config.UsePermissions && sender.CheckPermission("kmsg"))
+            if (sender.CheckPermission("kmsg.color") || sender.CheckPermission("kmsg"))
             {
                 response = Plugin.Singleton.Translation.NoPerms;
                 return false;
