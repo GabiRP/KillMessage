@@ -25,6 +25,9 @@ namespace KillMessage.Configs
 
         [Description("Duration of the message that's shown to the killed player")] 
         public ushort MessageDuration { get; set; } = 3;
+
+        [Description("If broadcasts should be used instead of hints")]
+        public bool UseBroadcast { get; set; } = false;
         
         [Description("List of available colors. MAKE SURE TO USE SCPSL WIKI COLORS")]
         public string[] AvailableColors { get; set; } = {
