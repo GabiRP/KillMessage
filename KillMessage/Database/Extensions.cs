@@ -60,7 +60,7 @@ namespace KillMessage.Database
                         Message = "",
                         UserId = ply.RawUserId,
                         Color = "yellow",
-                        Disabled = false,
+                        Disabled = true,
                     });
                     return;
                 }
@@ -103,18 +103,19 @@ namespace KillMessage.Database
                 Log.Error(e);
             }
         }
-        
+
         public static string GetMessage(this Player ply)
-         => Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId).Message ?? "";
+            => !Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId) 
+                            ? "" : Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId).Message;
+        
 
         public static bool GetDisabled(this Player ply)
-        {
-            if(!Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId))
-                return false;
-            return Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId).Disabled;
-        }
+            => Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId)
+               && Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId).Disabled;
+        
 
         public static string GetColor(this Player ply)
-            => Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId).Color ?? "yellow";
+            => !Database.LiteDatabase.GetCollection<MessageData>().Exists(x => x.UserId == ply.RawUserId) 
+                 ? "" : Database.LiteDatabase.GetCollection<MessageData>().FindOne(x => x.UserId == ply.RawUserId).Color;
     }
 }
