@@ -37,3 +37,8 @@ IT SHOULD BE SAFE TO USE THE SAME DATABASE IN MULTIPLE SERVERS AT ONCE
 ### Give permission to all users
 
 - If you want to give all users a permission, there should be a group in your ``permissions.yml`` file called 'user' with ``default`` set to ``true``, simply add the permission you want to give to everyone there.
+
+## Colors
+
+- For broadcast, you'll need to use colors from [Unity Rich Text](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html) (Some of them will probably not work)
+- For hints i've tested, and only ``red, yellow, orange, black, blue, green, grey, lightblue, purple`` work.
