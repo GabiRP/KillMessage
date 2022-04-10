@@ -30,7 +30,7 @@ namespace KillMessage.Commands
                 response = Plugin.Singleton.Translation.ColorEmpty;
                 return false;
             }
-            if (!Plugin.Singleton.Config.AvailableColors.Contains(c, StringComparison.OrdinalIgnoreCase))
+            if (!c.StartsWith("#") && !Plugin.Singleton.Config.AvailableColors.Contains(c, StringComparison.OrdinalIgnoreCase))
             {
                 response = Plugin.Singleton.Translation.ColorNotFound.Replace("$color", arguments.ElementAt(0));
                 return false;
