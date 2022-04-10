@@ -42,3 +42,4 @@ IT SHOULD BE SAFE TO USE THE SAME DATABASE IN MULTIPLE SERVERS AT ONCE
 
 - For broadcast, you'll need to use colors from [Unity Rich Text](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html) (Some of them will probably not work)
 - For hints i've tested, and only ``red, yellow, orange, black, blue, green, grey, lightblue, purple`` work.
+- You can also use Hex without needing to add the colors to the config
