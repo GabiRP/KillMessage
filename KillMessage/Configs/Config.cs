@@ -34,5 +34,8 @@ namespace KillMessage.Configs
             "pink", "red", "brown", "silver", "light_green", "crimson", "cyan", "aqua", "deep_pink", "tomato", "yellow", "magenta", "blue_green",
             "orange"
         };
+
+        [Description("Whether or not to send the message if the player suicides")]
+        public bool ShowOnSuicide { get; set; } = true;
     }
 }
