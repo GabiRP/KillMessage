@@ -7,7 +7,7 @@ namespace KillMessage
     {
         internal void OnDied(DiedEventArgs ev)
         {
-            if(ev.Target.GetDisabled() || ev.Killer == null || ev.Target == null || string.IsNullOrEmpty(ev.Killer.GetMessage()) || (Plugin.Singleton.Config.ShowOnSuicide && ev.Target == ev.Killer)) return;
+            if(ev.Target.GetDisabled() || ev.Killer == null || ev.Target == null || string.IsNullOrEmpty(ev.Killer.GetMessage()) || (!Plugin.Singleton.Config.ShowOnSuicide && ev.Target == ev.Killer)) return;
             
             string message = $"<size={Plugin.Singleton.Config.MessageSize}><color={ev.Killer.GetColor()}>{Plugin.Singleton.Translation.Message.Replace("$message", ev.Killer.GetMessage()).Replace("$author", ev.Killer.Nickname)}</color></size>";
 
