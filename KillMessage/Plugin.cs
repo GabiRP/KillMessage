@@ -8,7 +8,7 @@ namespace KillMessage
     {
         public override string Name => "KillMessage";
         public override string Author => "GabiRP";
-        public override Version Version { get; } = new Version(1, 0, 6);
+        public override Version Version { get; } = new Version(1, 0, 7);
         public override Version RequiredExiledVersion { get; } = new Version(5, 0, 0);
 
         public static Plugin Singleton;
