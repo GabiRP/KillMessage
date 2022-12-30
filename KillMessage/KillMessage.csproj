@@ -83,6 +83,9 @@
         <Reference Include="UnityEngine.CoreModule">
           <HintPath>$(EXILED_REFERENCES)\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.PhysicsModule">
+          <HintPath>E:\ExiledReferences\12\UnityEngine.PhysicsModule.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Commands\Delete.cs" />
