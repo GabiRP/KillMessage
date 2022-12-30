@@ -1,4 +1,5 @@
 ﻿using Exiled.Events.EventArgs;
+using Exiled.Events.EventArgs.Player;
 using KillMessage.Database;
 
 namespace KillMessage
@@ -7,17 +8,17 @@ namespace KillMessage
     {
         internal void OnDied(DiedEventArgs ev)
         {
-            if(ev.Target.GetDisabled() || ev.Killer == null || ev.Target == null || string.IsNullOrEmpty(ev.Killer.GetMessage()) || (!Plugin.Singleton.Config.ShowOnSuicide && ev.Target == ev.Killer)) return;
+            if(ev.Player.GetDisabled() || ev.Attacker == null || ev.Player == null || string.IsNullOrEmpty(ev.Attacker.GetMessage()) || (!Plugin.Singleton.Config.ShowOnSuicide && ev.Player == ev.Attacker)) return;
             
-            string message = $"<size={Plugin.Singleton.Config.MessageSize}><color={ev.Killer.GetColor()}>{Plugin.Singleton.Translation.Message.Replace("$message", ev.Killer.GetMessage()).Replace("$author", ev.Killer.Nickname)}</color></size>";
+            string message = $"<size={Plugin.Singleton.Config.MessageSize}><color={ev.Attacker.GetColor()}>{Plugin.Singleton.Translation.Message.Replace("$message", ev.Attacker.GetMessage()).Replace("$author", ev.Attacker.Nickname)}</color></size>";
 
             if (Plugin.Singleton.Config.UseBroadcast)
             {
-                ev.Target.Broadcast(Plugin.Singleton.Config.MessageDuration, message);
+                ev.Player.Broadcast(Plugin.Singleton.Config.MessageDuration, message);
                 return;
             }
             
-            ev.Target.ShowHint(message, Plugin.Singleton.Config.MessageDuration);
+            ev.Player.ShowHint(message, Plugin.Singleton.Config.MessageDuration);
         }
 
         internal void OnVerified(VerifiedEventArgs ev)

@@ -8,6 +8,9 @@ namespace KillMessage.Configs
     public class Config : IConfig
     {
         public bool IsEnabled { get; set; } = true;
+
+        public bool Debug { get; set; } = false;
+
         [Description("The folder where the database file will be stored in")]
         public string DatabaseFolder { get; set; } = Path.Combine(Paths.Plugins, "KillMessage");
 

@@ -4,13 +4,13 @@ using KillMessage.Configs;
 
 namespace KillMessage
 {
-    public class Plugin : Plugin<Config, Translations>
+    public class Plugin : Plugin<Config, Configs.Translations>
     {
         public override string Name => "KillMessage";
         public override string Author => "GabiRP";
-        public override Version Version { get; } = new Version(1, 0, 7);
+        public override Version Version { get; } = new Version(1, 0, 8);
         public override Version RequiredExiledVersion { get; } = new Version(5, 0, 0);
-
+        
         public static Plugin Singleton;
         public EventHandlers EventHandlers;
         public override void OnEnabled()
