@@ -67,7 +67,7 @@
           <HintPath>..\packages\LiteDB.5.0.9\lib\net45\LiteDB.dll</HintPath>
         </Reference>
         <Reference Include="Mirror">
-          <HintPath>F:\ExiledReferences\Mirror.dll</HintPath>
+          <HintPath>E:\ExiledReferences\12\Mirror.dll</HintPath>
         </Reference>
         <Reference Include="NorthwoodLib, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
           <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\NorthwoodLib.dll</HintPath>
