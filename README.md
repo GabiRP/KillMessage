@@ -1,6 +1,6 @@
 # KillMessage
 
-An [EXILED](https://github.com/Exiled-Team/EXILED) plugin that shows a customizable message to players you kill.
+An [EXILED](https://github.com/ExMod-Team/EXILED) plugin that shows a customizable message to players you kill.
 
 IT SHOULD BE SAFE TO USE THE SAME DATABASE IN MULTIPLE SERVERS AT ONCE
 
